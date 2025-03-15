@@ -159,6 +159,35 @@ struct PlayingCardView: View {
     func symbolPositions(for rank: Int) -> [(CGFloat, CGFloat)] { ... }
 }
 ```
+Step 6: Example Usage
+To see the card in action, you can use it in a ContentView like this:
+
+```swift
+// Example usage
+struct ContentView: View {
+    @Environment(\.verticalSizeClass) var verticalSizeClass
+    
+    var body: some View {
+        if verticalSizeClass == .compact {
+            HStack {
+                // CardView(card: PlayingCard(suit: .spades, rank: .ace))
+                PlayingCardView(card: PlayingCard(suit: .clubs, rank: .king))
+                PlayingCardView(card: PlayingCard(suit: .hearts, rank: .ace))
+                PlayingCardView(card: PlayingCard(suit: .clubs, rank: .number(9)))
+            }
+           
+        } else {
+            VStack {
+                // CardView(card: PlayingCard(suit: .spades, rank: .ace))
+                PlayingCardView(card: PlayingCard(suit: .clubs, rank: .king))
+                PlayingCardView(card: PlayingCard(suit: .hearts, rank: .ace))
+                PlayingCardView(card: PlayingCard(suit: .clubs, rank: .number(9)))
+            }
+        }
+    }
+}
+```
+
 ## Conclusion
 
 Grok 3 did a great job of creating a playing card in SwiftUI, suggesting that the symbolPositions(for rank: Int) function returns an array of rank tuples (x, y) representing the suit symbol positions as a fraction of the card's width and height to place the suit symbols on rank 2-10 cards.
