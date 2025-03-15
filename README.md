@@ -8,7 +8,7 @@
 
 ## "Thinking" AI Grok 3 xAI :
  <img src="https://github.com/BestKora/Grok3PlayingCard/blob/29d1477b593b7e84be2be3d4d222136af565efe4/Grok%203%20request.png" width="650">
- The protocol for interaction with Grok 3 is presented [here](https://x.com/i/grok/share/QoOqZXCr4DSyIS9zcjWQEhOOc).
+ The protocol for interaction with Grok 3 is presented [martynafford/natural-earth-geojson](https://github.com/martynafford/natural-earth-geojson).  [here](https://x.com/i/grok/share/QoOqZXCr4DSyIS9zcjWQEhOOc).
 
 To address your query about laying out Text(card.suit.rawValue) in the center of the card like in the attached image of a 5 of Spades, I’ll provide a solution that replicates the described layout using SwiftUI. The image shows a 5 of Spades with five spade symbols arranged in a specific pattern: two at the top (with the left slightly lower than the right), one in the center, and two at the bottom (with the left slightly higher than the right). Here’s how you can achieve this in your CardView.
 
