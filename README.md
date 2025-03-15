@@ -5,8 +5,6 @@
  <img src="https://github.com/BestKora/Grok3PlayingCard/blob/b2b4dfa44eb44075782641ee97d3f80914c6847c/Grok3PlayingCardP.png " width="350">
 
  <img src="https://github.com/BestKora/Grok3PlayingCard/blob/383841da6322aa4935a6ccaae8d5a258421bde0b/Grok3PlayingCardL.png" width="550">
- 
- <img src="https://github.com/BestKora/Grok3PlayingCard/blob/429c4267198c96da2613bface4733adee5565a1a/ThreeCards.png" width="650">
 
 ## "Thinking" AI Grok 3 xAI :
  <img src="https://github.com/BestKora/Grok3PlayingCard/blob/29d1477b593b7e84be2be3d4d222136af565efe4/Grok%203%20request.png" width="650">
