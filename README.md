@@ -190,10 +190,10 @@ struct ContentView: View {
 
 ## Conclusion
 
-Grok 3 did a great job of creating a playing card in SwiftUI, suggesting that the symbolPositions(for rank: Int) function returns an array of rank tuples (x, y) representing the suit symbol positions as a fraction of the card's width and height to place the suit symbols on rank 2-10 cards.
+* Grok 3 did a great job of creating a playing card in SwiftUI, suggesting that the symbolPositions(for rank: Int) function returns an array of rank tuples (x, y) representing the suit symbol positions as a fraction of the card's width and height to place the suit symbols on rank 2-10 cards.
 
-This implementation provides accurate and traditional symbol placement for ranks 2-10, ensuring that your playing cards look professional and follow a standard design.
+* This implementation provides accurate and traditional symbol placement for ranks 2-10, ensuring that your playing cards look professional and follow a standard design.
 
-All CardView content is wrapped in a GeometryReader, providing access to geometry.size.width and geometry.size.height and automatically adjusting font sizes based on the playing card size. This creates a design that easily adapts to different card sizes.
+* All CardView content is wrapped in a GeometryReader, providing access to geometry.size.width and geometry.size.height and automatically adjusting font sizes based on the playing card size. This creates a design that easily adapts to different card sizes.
 
 
