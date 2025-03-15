@@ -159,7 +159,7 @@ struct PlayingCardView: View {
     func symbolPositions(for rank: Int) -> [(CGFloat, CGFloat)] { ... }
 }
 ```
-Step 6: Example Usage
+## Step 6: Example Usage
 To see the card in action, you can use it in a ContentView like this:
 
 ```swift
