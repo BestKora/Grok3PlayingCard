@@ -159,6 +159,115 @@ struct PlayingCardView: View {
     func symbolPositions(for rank: Int) -> [(CGFloat, CGFloat)] { ... }
 }
 ```
+
+The highlight of this code is the function symbolPositions (for rank: Int), which returns an array of rank  (x, y) tuples representing positions as fractions of the card’s width and height:
+```swift
+func symbolPositions(for rank: Int) -> [(CGFloat, CGFloat)] {
+        // Define positions as fractions of width and height
+        switch rank {
+        case 2:
+           return [
+                (0.5, 0.25 ),  // Top
+                (0.5, 0.75 )   // Bottom
+            ]
+        case 3:
+            return [
+                (0.5, 0.25 ),  // Top
+                (0.5, 0.5  ),  // Center
+                (0.5, 0.75 )   // Bottom
+            ]
+        case 4:
+            return [
+                (0.25, 0.25 ),  // Top left
+                (0.75, 0.25 ),  // Top right
+                (0.25, 0.75 ),  // Bottom left
+                (0.75, 0.75 )   // Bottom right
+            ]
+        case 5:
+            return [
+                (0.25, 0.25),  // Top left
+                (0.75, 0.25),  // Top right
+                (0.5, 0.5),    // Center
+                (0.25, 0.75),  // Bottom left
+                (0.75, 0.75)   // Bottom right
+            ]
+        case 6:
+            return [
+                (0.25, 0.25 ),  // Top left
+                (0.75, 0.25 ),  // Top right
+                (0.25, 0.5  ),  // Center left
+                (0.75, 0.5  ),  // Center right
+                (0.25, 0.75 ),  // Bottom left
+                (0.75, 0.75 )   // Bottom right
+            ]
+        case 7:
+            return [
+                // Top row: three symbols
+                (0.25, 0.15 ),  // Top left: slightly lower
+                (0.5 , 0.3  ),  // Top center
+                (0.75, 0.15 ),  // Top right: slightly higher
+                // Middle: two symbols
+                (0.25, 0.5),    // Center left
+                (0.75, 0.5),     // Center right
+                // Bottom row: two symbols (mirrored)
+                (0.25, 0.85 ),  // Bottom left
+                (0.75, 0.85 )   // Bottom right
+            ]
+        case 8:
+            return [
+                // Top row: three symbols
+                (0.25, 0.15 ),  // Top left: slightly lower
+                (0.5, 0.3),     // Top center
+                (0.75, 0.15 ),  // Top right:
+                // Middle: two symbols (one on each side)
+                (0.25, 0.5),            // Middle left
+                (0.75, 0.5),            // Middle right
+                // Bottom row: three symbols (mirrored)
+                (0.25, 0.85 ),  // Bottom left
+                (0.5, 0.7),     // Bottom center
+                (0.75, 0.85 )   // Bottom right
+            ]
+        case 9:
+            return [
+                // Top row: three symbols
+                (0.25, 0.15 ),  // Top left
+                (0.5, 0.5),     // Top center
+                (0.75, 0.15 ),  // Top right
+                // Middle row: four symbols (two on each side)
+                (0.25, 0.38 ),   // Middle left upper
+                (0.25, 0.62 ),   // Middle left lower
+                (0.75, 0.38 ),   // Middle right upper
+                (0.75, 0.62 ),   // Middle right lower
+                // Bottom row: three symbols (mirrored)
+                (0.25, 0.85 ),  // Bottom left
+                (0.75, 0.85 )   // Bottom right
+            ]
+        case 10:
+            return [
+                // Top row: three symbols
+                (0.25, 0.15 ),  // Top left
+                (0.5, 0.30),    // Top center
+                (0.75, 0.15 ),  // Top right
+                // Middle row: four symbols (two on each side)
+                (0.25, 0.4 ),   // Middle left upper
+                (0.25, 0.6 ),   // Middle left lower
+                (0.75, 0.4 ),   // Middle right upper
+                (0.75, 0.6 ),   // Middle right lower
+                // Bottom row: three symbols (mirrored)
+                (0.25, 0.85 ),  // Bottom left
+                (0.5, 0.70  ),  // Bottom center
+                (0.75, 0.85 )   // Bottom right
+            ]
+        default:
+            // For other ranks, stack symbols vertically as a fallback
+            return (0..<rank).map { i in
+                (0.5, CGFloat(i + 1) / CGFloat(rank + 1))
+            }
+        }
+    }
+```
+The ForEach loop places a Text(card.suit.rawValue) at each position, scaled by the card’s width and height.
+
 ## Step 6: Example Usage
 To see the card in action, you can use it in a ContentView like this:
 
