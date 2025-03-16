@@ -160,7 +160,8 @@ struct PlayingCardView: View {
 }
 ```
 
-The highlight of this code is the function symbolPositions (for rank: Int), which returns an array of rank  (x, y) tuples representing positions as fractions of the card’s width and height:
+#### The highlight of this code is the function symbolPositions (for rank: Int), which returns an array of rank  (x, y) tuples representing positions as fractions of the card’s width and height:
+
 ```swift
 func symbolPositions(for rank: Int) -> [(CGFloat, CGFloat)] {
         // Define positions as fractions of width and height
